@@ -1,8 +1,7 @@
 'use strict';
 
 import joi from '@hapi/joi';
-
-import { common } from './commom';
+import common from './commom';
 const envVarsSchema = joi.object({
   SERVER_HOST: joi.string(),
   SERVER_PORT: joi.number(),
@@ -16,7 +15,7 @@ if (error) {
   throw new Error(`Config validation error: ${error.message}`);
 }
 
-const config = {
+export default {
     express: {
         host: envVars.SERVER_HOST,
         port: envVars.SERVER_PORT,
@@ -24,5 +23,3 @@ const config = {
         frontendUrl: common.nodeEnv === 'production' ? `${common.appHostUrl}` : `http://${envVars.SERVER_HOST}:${envVars.FRONTEND_PORT}`, 
     }
 };
-
-module.exports = config;
