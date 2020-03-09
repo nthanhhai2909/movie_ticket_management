@@ -6,7 +6,6 @@ import cors from 'cors';
 import router from './router';
 import cfg from './config/';
 import {handledErrorMiddleware, defaultError} from './middleware/errors';
-import InputException from './exception/input.exception';
 const app = express();
 
 // connect to database

@@ -1,8 +1,6 @@
 const ErrorCode = {
     // Error code for data required
     REQUIRED: 'REQUIRED', 
-    // Error code for format data invalid
-    INVALID_FORMAT: 'INVALID_FORMAT',
     // Error code for data unique
     DUPLICATE_VALUE: 'DUPLICATE_VALUE',
     // Error for data invalid

@@ -1,6 +1,5 @@
-import _ from 'lodash';
 import ErrorCode from '../enum/type.error';
-
+import _ from 'lodash';
 const res = {
     errorCode: function (errorCode) {
         if (_.values(ErrorCode).indexOf(errorCode) === -1) {
@@ -61,4 +60,4 @@ const res = {
     }
 };
 
-export default Object.create(res);
+export default () => Object.create(res);

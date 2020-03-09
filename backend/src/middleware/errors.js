@@ -2,8 +2,8 @@
 import logger from '../logger/logger';
 /* eslint-disable handle-callback-err */
 export function  handledErrorMiddleware (err, req, res, next){
-    console.log("handledErrorMiddleware");
     if (err.handle) {
+        logger.error(err);
         err.handle(req, res, next);
     } else {
         return next(err);

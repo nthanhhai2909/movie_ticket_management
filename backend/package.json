@@ -32,9 +32,11 @@
     "cors": "^2.8.5",
     "dotenv-flow": "^3.1.0",
     "express": "^4.17.1",
+    "http-status-codes": "^1.4.0",
     "lodash": "^4.17.15",
     "mongoose": "^5.9.3",
     "node-exceptions": "^4.0.1",
+    "validator": "^12.2.0",
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^4.4.2"
   }

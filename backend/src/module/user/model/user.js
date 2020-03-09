@@ -2,11 +2,13 @@ import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 import BaseSchema from '../../commom/model/baseschema';
 import AccountStatus from '../enum/account.status';
+import cfg from '../../../config';
 
 const UserSchema = new BaseSchema({
     email: {
         type: String,
         sparse: true,
+        unique: true,
         required: true,
         lowercase: true
     },
@@ -18,10 +20,11 @@ const UserSchema = new BaseSchema({
         type: String,
         required: true,
         sparse: true,
-        unique: true,
+        unique: true
     },
     role: {
         type: String,
+        enum: [cfg.role.admin, cfg.role.normal],
         lowercase: true
     },
     status: {
@@ -32,6 +35,7 @@ const UserSchema = new BaseSchema({
         lowercase: true
     }
 });
+
 
 UserSchema.pre('save', async function () {
     var user = this;

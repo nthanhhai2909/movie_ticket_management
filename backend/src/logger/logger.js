@@ -2,7 +2,6 @@ import winston from 'winston';
 const { combine, errors, json, timestamp, printf, colorize } = winston.format;
 import path from 'path';
 require('winston-daily-rotate-file');
-require('dotenv-flow').config();
 /**
  * I found a example is great for config winston at https://github.com/winstonjs/winston/tree/master/examples
  */
