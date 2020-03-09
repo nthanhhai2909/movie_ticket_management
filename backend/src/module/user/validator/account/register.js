@@ -9,6 +9,7 @@ export const requiredValidator = (req, res, next) => {
     const { email, password, phonenumber } = req.body;
     let errors = [];
 
+
     if (_.isEmpty(email)) {
         errors.push(errorResponse().errorCode(ErrorCode.REQUIRED)
             .field('email').in('body').message(requiredMessage('email')).build());
@@ -23,7 +24,6 @@ export const requiredValidator = (req, res, next) => {
         errors.push(errorResponse().errorCode(ErrorCode.REQUIRED)
             .field('phonenumber').in('body').message(requiredMessage('phonenumber')).build());
     }
-
     ValidatorUtils.throwInputException(errors);
     next();
 };
