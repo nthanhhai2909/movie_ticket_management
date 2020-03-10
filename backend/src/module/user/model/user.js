@@ -25,7 +25,8 @@ const UserSchema = new BaseSchema({
     role: {
         type: String,
         enum: [cfg.role.admin, cfg.role.normal],
-        lowercase: true
+        lowercase: true,
+        default: cfg.role.normal
     },
     status: {
         type: String,
