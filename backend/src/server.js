@@ -6,6 +6,8 @@ import cors from 'cors';
 import router from './router';
 import cfg from './config/';
 import {handledErrorMiddleware, defaultError} from './middleware/errors';
+import swaggerUi from 'swagger-ui-express';
+import swaggerSpecs from './api-docs/swagger.specs';
 const app = express();
 
 // connect to database
@@ -23,6 +25,9 @@ app.use(bodyParser.urlencoded({
 
 
 app.use('/', router);
+
+// api docs
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
 // eslint-disable-next-line no-unused-vars
 app.use((req, res, next) => {

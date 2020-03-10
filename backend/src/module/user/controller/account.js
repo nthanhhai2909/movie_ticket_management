@@ -20,18 +20,20 @@ export const register = async (req, res, next) => {
 
 export const login = async (req, res, next) => {
     let { email, password } = req.body;
+    console.log(email)
+
 
     try{
         let user = await User.findOne({email});
         if (_.isNull(user)) {
             return res.status(UNAUTHORIZED).json(errorResponse().errorCode(ErrorCode.INVALID_DATA).field('email')
-            .in('body').message(invalidMessage('email')).build());
+            .in('body').originalValue(email).message(invalidMessage('email')).build());
         }
     
         let match = await user.verifyPassword(password);
         if (!match) {
             return res.status(UNAUTHORIZED).json(errorResponse().errorCode(ErrorCode.INVALID_DATA).field('password')
-            .in('body').message(invalidMessage('password')).build());
+            .in('body').originalValue(password).message(invalidMessage('password')).build());
         }
         res.status(OK).json({token: await jwt.sign({_id: user._id, role: user.role}, cfg.session.secret, { expiresIn:  cfg.session.maxAge })});
     } catch(err) {
