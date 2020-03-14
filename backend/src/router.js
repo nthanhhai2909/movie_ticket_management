@@ -1,6 +1,7 @@
 import { Router } from 'express';
 
 import user from './module/user/';
+import cinema from './module/cinema';
 
 const router = Router();
 
@@ -29,5 +30,8 @@ const router = Router();
  *          type: string          
  */
 router.use('/api/user', user);
+
+
+router.use('/api/cinema', cinema);
 
 export default router;

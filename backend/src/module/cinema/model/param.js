@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import BaseSchema from '../../commom/model/baseschema';
 import CHAIR_CATEGORIES from '../enum/chair.category';
 
-const RoomDiscountSchema = new BaseSchema({
+const ParamSchema = new BaseSchema({
     roomId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Room',
@@ -20,4 +20,4 @@ const RoomDiscountSchema = new BaseSchema({
     }
 });
 
-export default mongoose.model('RoomDiscount', RoomDiscountSchema)
+export default mongoose.model('Param', ParamSchema);

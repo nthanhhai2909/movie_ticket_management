@@ -84,7 +84,7 @@ router.post('/register', requiredValidator, formatValidator, consistentValidator
  *                 schema:
  *                      $ref: '#/definitions/ErrorMessage'   
  *
- */ 
+ */
 router.post('/login', login);
 
 

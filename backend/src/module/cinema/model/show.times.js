@@ -4,12 +4,12 @@ import BaseSchema from '../../commom/model/baseschema';
 
 const ShowTimesSchema = new BaseSchema({
     startTime: {
-        type: Number, // timestamps
+        type: Date,
         required: true,
         index: true
     },
     endTime: {
-        type: Number, // timestamps
+        type: Date,
         required: true,
         index: true
     },

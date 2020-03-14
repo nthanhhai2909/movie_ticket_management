@@ -20,9 +20,6 @@ export const register = async (req, res, next) => {
 
 export const login = async (req, res, next) => {
     let { email, password } = req.body;
-    console.log(email)
-
-
     try{
         let user = await User.findOne({email});
         if (_.isNull(user)) {

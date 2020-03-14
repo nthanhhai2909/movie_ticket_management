@@ -38,14 +38,15 @@
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
     "mocha": "^7.1.0",
+    "moment": "^2.24.0",
     "mongodb-memory-server": "^6.3.2",
     "mongoose": "^5.9.3",
     "node-exceptions": "^4.0.1",
     "sinon": "^9.0.0",
+    "swagger-jsdoc": "^3.3.0",
+    "swagger-ui-express": "^4.0.7",
     "validator": "^12.2.0",
     "winston": "^3.2.1",
-    "winston-daily-rotate-file": "^4.4.2",
-    "swagger-jsdoc": "^3.3.0",
-    "swagger-ui-express": "^4.0.7"
+    "winston-daily-rotate-file": "^4.4.2"
   }
 }
